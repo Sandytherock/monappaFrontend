@@ -1,7 +1,7 @@
 import { AlignJustify, Menu, Search, X } from "lucide-react";
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import logo from "../../public/February 2025.svg"
+import logo from "../../public/February 2025.svg";
 
 function DropDownMenu({ setShowMenu }) {
   const navigate = useNavigate();
@@ -31,10 +31,13 @@ function DropDownMenu({ setShowMenu }) {
         </span>
       </div>
       <div className="h-14 border-b border-black/30 flex items-center pl-1">
-        <span className="font-thin hover:underline underline-offset-2" onClick={() => {
+        <span
+          className="font-thin hover:underline underline-offset-2"
+          onClick={() => {
             navigate("/conference");
             setShowMenu(false);
-          }}>
+          }}
+        >
           List of Books
         </span>
       </div>
@@ -42,7 +45,15 @@ function DropDownMenu({ setShowMenu }) {
   );
 }
 
-function SearchMenu() {
+function SearchMenu({ setShowSearchMenu }) {
+  const [search, setSearch] = useState("");
+  const navigate = useNavigate();
+
+  const onSearch = () => {
+    if (!search) return;
+    navigate(`/search-result/${search}`);
+  };
+
   return (
     <div className="fixed w-full top-14 h-28 pl-10 pt-5 pr-5 bg-white z-10">
       <div className="h-full flex justify-center items-center gap-5">
@@ -50,8 +61,15 @@ function SearchMenu() {
           type="text"
           placeholder="Search"
           className="border-b rounded-lg pl-3 py-2 font-thin w-lg"
+          onChange={(e) => setSearch(e.target.value)}
         />
-        <button className="bg-cyan-700 lg:px-12 py-2 rounded-lg">
+        <button
+          className="bg-cyan-700 lg:px-12 py-2 rounded-lg"
+          onClick={() => {
+            setShowSearchMenu(false);
+            onSearch();
+          }}
+        >
           <span className="text-white max-lg:hidden font-thin">Search</span>
           <Search className="text-white lg:hidden my-1 mx-3" />
         </button>
@@ -164,7 +182,7 @@ export function Header() {
         </div>
       </div>
       {showMenu && <DropDownMenu setShowMenu={setShowMenu} />}
-      {showSearchMenu && <SearchMenu />}
+      {showSearchMenu && <SearchMenu setShowSearchMenu={setShowSearchMenu} />}
     </>
   );
 }

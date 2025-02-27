@@ -8,6 +8,7 @@ import { PublishConferenceProceeding } from "./pages/PublishConferenceProcedeein
 import { BookShowCasePage } from "./pages/BookShowCase";
 import { TermsPrivacyPage } from "./pages/TermsPrivacy";
 import { MoreInfoPage } from "./pages/MoreInfoPage";
+import { SearchResult } from "./pages/SearchResult";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             element={<TermsPrivacyPage />}
           />
           <Route path="moreinfo/:location" element={<MoreInfoPage />} />
+          <Route path="search-result/:search" element={<SearchResult />} />
         </Routes>
         <Footer />
       </div>
