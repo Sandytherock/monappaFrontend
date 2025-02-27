@@ -41,7 +41,7 @@ export function SearchResult() {
     <div className="flex-1">
       <div className="w-full flex justify-center px-5 py-10">
         <div className="w-full max-w-[76rem] flex flex-col justify-center">
-          <h1 className="my-5 text-3xl text-center">Research Result</h1>
+          <h1 className="my-5 text-3xl text-center">Search Result</h1>
           <hr className="my-5" />
           {loading ? (
             <div className="flex justify-center items-center">
