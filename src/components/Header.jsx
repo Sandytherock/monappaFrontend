@@ -60,7 +60,7 @@ function SearchMenu({ setShowSearchMenu }) {
         <input
           type="text"
           placeholder="Search"
-          className="border-b rounded-lg pl-3 py-2 font-thin w-lg"
+          className="border-b rounded-lg pl-3 py-2 font-thin w-lg border-cyan-900"
           onChange={(e) => setSearch(e.target.value)}
         />
         <button
