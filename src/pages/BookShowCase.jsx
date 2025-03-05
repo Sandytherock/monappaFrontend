@@ -47,6 +47,7 @@ export function BookShowCasePage() {
   return (
     <div className="flex-1">
       <FirstSection
+        image = {book?.imag_url}
         data={book?.firstSection}
         hardcovers={book.hardcovers}
         ebooks={book.ebooks}
@@ -110,14 +111,14 @@ export function BookShowCasePage() {
   );
 }
 
-function FirstSection({ data, hardcovers, ebooks }) {
+function FirstSection({ data, hardcovers, ebooks ,image}) {
   return (
     <div className="w-full flex justify-center px-5 py-10  bg-gray-200">
       <div className="w-full max-w-[76rem]">
         <div className="w-full grid md:grid-cols-3 max-md:grid-rows-2">
           <div className="md:col-span-1 max-md:row-span-1 max-md:pl-15 flex items-center">
             <img
-              src="https://www.superagency.ai/wp-content/uploads/2025/02/book-cover-1600-alt-2.png"
+              src={image}
               alt="book image"
               className="w-[90%] max-md:w-[80%]"
             />
