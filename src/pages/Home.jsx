@@ -17,14 +17,14 @@ export function Home() {
       <div className="w-full flex justify-center px-5 py-10">
         <div className="w-full max-w-[76rem]">
           <p className="text-xl">
-            <span className="font-bold">Monappa Publications </span> is a progressive publisher
-            focused on delivering high-quality book content spanning a wide
-            array of disciplines.
+            <span className="font-bold">Monappa Publications </span> is a
+            progressive publisher focused on delivering high-quality book
+            content spanning a wide array of disciplines.
           </p>
           <p className="text-xl mt-3 text-justify">
             {" "}
-            We offer authors the flexibility of standard publication at no cost
-            or open access with transparent fees, supported by our skilled
+            We offer authors the flexibility of standard publication cost or
+            open access with transparent fees, supported by our skilled
             Publications Team. Featuring diverse categories such as Business and
             Management and Interdisciplinary Studies, our books are designed to
             engage global readers with impactful, well-crafted content.

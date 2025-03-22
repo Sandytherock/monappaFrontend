@@ -47,7 +47,7 @@ export function BookShowCasePage() {
   return (
     <div className="flex-1">
       <FirstSection
-        image = {book?.imag_url}
+        image={book?.imag_url}
         data={book?.firstSection}
         hardcovers={book.hardcovers}
         ebooks={book.ebooks}
@@ -70,37 +70,51 @@ export function BookShowCasePage() {
         <div className="w-full max-w-[45rem]">
           <h3 className="text-4xl font-extrabold my-5">BOOK DETAILS</h3>
           <div className="flex flex-col gap-3">
-            <p>
-              <span className="text-black font-bold">ASIN :</span>{" "}
-              {book?.bookDetails?.ASIN}
-            </p>
-            <p>
-              <span className="text-black font-bold">Publisher :</span>{" "}
-              {book?.bookDetails?.Publisher}
-            </p>
-            <p>
-              <span className="text-black font-bold">Language :</span>{" "}
-              {book?.bookDetails?.Language}
-            </p>
-            <p>
-              <span className="text-black font-bold">Hardcover :</span>{" "}
-              {book?.bookDetails?.Pages}
-              pages
-            </p>
-            <p>
-              <span className="text-black font-bold">ISBN-10 :</span>{" "}
-              {book?.bookDetails?.ISBN10}
-            </p>
-            <p>
-              <span className="text-black font-bold">ISBN-13 :</span>
-              {book?.bookDetails?.ISBN13}
-            </p>
-            <p>
-              <span className="text-black font-bold">Dimensions :</span>{" "}
-              {book?.bookDetails?.dimensions?.width} x
-              {book?.bookDetails?.dimensions?.length} x{" "}
-              {book?.bookDetails?.dimensions?.height} cm
-            </p>
+            {book?.bookDetails?.ASIN && (
+              <p>
+                <span className="text-black font-bold">ASIN :</span>{" "}
+                {book?.bookDetails?.ASIN}
+              </p>
+            )}
+            {book?.bookDetails?.Publisher && (
+              <p>
+                <span className="text-black font-bold">Publisher :</span>{" "}
+                {book?.bookDetails?.Publisher}
+              </p>
+            )}
+            {book?.bookDetails?.Language && (
+              <p>
+                <span className="text-black font-bold">Language :</span>{" "}
+                {book?.bookDetails?.Language}
+              </p>
+            )}
+            {book?.bookDetails?.Pages && (
+              <p>
+                <span className="text-black font-bold">Hardcover :</span>{" "}
+                {book?.bookDetails?.Pages}
+                pages
+              </p>
+            )}
+            {book?.bookDetails?.ISBN10 && (
+              <p>
+                <span className="text-black font-bold">ISBN-10 :</span>{" "}
+                {book?.bookDetails?.ISBN10}
+              </p>
+            )}
+            {book?.bookDetails?.ISBN13 && (
+              <p>
+                <span className="text-black font-bold">ISBN-13 :</span>
+                {book?.bookDetails?.ISBN13}
+              </p>
+            )}
+            {book?.bookDetails?.dimensions?.width && (
+              <p>
+                <span className="text-black font-bold">Dimensions :</span>{" "}
+                {book?.bookDetails?.dimensions?.width} x
+                {book?.bookDetails?.dimensions?.length} x{" "}
+                {book?.bookDetails?.dimensions?.height} cm
+              </p>
+            )}
           </div>
         </div>
       </div>
@@ -111,7 +125,7 @@ export function BookShowCasePage() {
   );
 }
 
-function FirstSection({ data, hardcovers, ebooks ,image}) {
+function FirstSection({ data, hardcovers, ebooks, image }) {
   return (
     <div className="w-full flex justify-center px-5 py-10  bg-gray-200">
       <div className="w-full max-w-[76rem]">

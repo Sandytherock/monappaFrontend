@@ -17,16 +17,16 @@ function App() {
         <Header />
         <Routes>
           <Route index element={<Home />} />
-          <Route path="artical" element={<PublishToArtical />} />
-          <Route path="books" element={<PublishABook />} />
-          <Route path="conference" element={<PublishConferenceProceeding />} />
-          <Route path="book/:id" element={<BookShowCasePage />} />
+          <Route path="/artical" element={<PublishToArtical />} />
+          <Route path="/books" element={<PublishABook />} />
+          <Route path="/conference" element={<PublishConferenceProceeding />} />
+          <Route path="/book/:id" element={<BookShowCasePage />} />
           <Route
-            path="terms-and-privacy-policy/:location"
+            path="/terms-and-privacy-policy/:location"
             element={<TermsPrivacyPage />}
           />
-          <Route path="moreinfo/:location" element={<MoreInfoPage />} />
-          <Route path="search-result/:search" element={<SearchResult />} />
+          <Route path="/moreinfo/:location" element={<MoreInfoPage />} />
+          <Route path="/search-result/:search" element={<SearchResult />} />
         </Routes>
         <Footer />
       </div>
